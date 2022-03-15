@@ -16,4 +16,4 @@ then clone the repo https://github.com/zainabelsayed/React-Ecommerce-Web-app.git
 1. Install dependencies - npm install
 2. Start the project - npm start
 
-## And you can see a Demo <a href="https://www.loom.com/share/7be49bf8c1a14d919725b478d754e912">Here</a>
+### And you can see a Demo <a href="https://www.loom.com/share/7be49bf8c1a14d919725b478d754e912">Here</a>
