@@ -18,6 +18,7 @@ import {
 } from "react-router-dom";
 import CartBag from "./Components/CartBag/CartBag";
 
+// catching errors in Graphql
 const errorLink = onError(({ graphqlErrors, networkErrors }) => {
   if (graphqlErrors) {
     graphqlErrors.map(({ message, location, path }) => {
@@ -28,6 +29,7 @@ const errorLink = onError(({ graphqlErrors, networkErrors }) => {
 
 const link = from([errorLink, new HttpLink({ uri: "http://localhost:4000/" })]);
 const cache = new InMemoryCache();
+// configuring Apollo client with GraphQl
 const client = new ApolloClient({
   cache: cache,
   link: link,

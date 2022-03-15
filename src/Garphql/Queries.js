@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 
+// filtering products according to category query 
 export const getProducts = (id) => {
   return gql`
   query {
@@ -31,6 +32,7 @@ export const getProducts = (id) => {
   `;
 };
 
+// getting all categories name and curruncies query
 export const getCategoriesAndCuruncies = 
 gql`
 query {
@@ -43,6 +45,8 @@ query {
   }
 }
 `
+
+// getting product with a certain id 
 export const getProduct = (id) => {
   return gql`
   query {
