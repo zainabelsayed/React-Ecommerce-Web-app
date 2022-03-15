@@ -1,25 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
+  from,
+} from "@apollo/client";
+import { onError } from "@apollo/client/link/error";
+import Products from "./Components/products/Products";
+import ProductDescription from "./Components/product-description/ProductDescription";
+import NavBar from "./Components/NavBar/NavBar";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import CartBag from "./Components/CartBag/CartBag";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const errorLink = onError(({ graphqlErrors, networkErrors }) => {
+  if (graphqlErrors) {
+    graphqlErrors.map(({ message, location, path }) => {
+      alert(`Graphql error ${message}`);
+    });
+  }
+});
+
+const link = from([errorLink, new HttpLink({ uri: "http://localhost:4000/" })]);
+const cache = new InMemoryCache();
+const client = new ApolloClient({
+  cache: cache,
+  link: link,
+});
+
+export default class App extends Component {
+  render() {
+    return (
+      <ApolloProvider client={client}>
+        <Router>
+          <>
+            <NavBar client={client} />
+            <Switch>
+              <Route exact path="/cart">
+                <CartBag />
+              </Route>
+              <Route exact path="/">
+                {<Redirect to="/all" />}
+              </Route>
+              <Route
+                exact
+                path="/:id"
+                render={(props) => <Products client={client} {...props} />}
+              />
+              <Route
+                path="/:id/:productId"
+                render={(props) => (
+                  <ProductDescription client={client} {...props} />
+                )}
+              />
+            </Switch>
+          </>
+        </Router>
+      </ApolloProvider>
+    );
+  }
 }
-
-export default App;

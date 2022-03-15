@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body{
+    font-family:'Raleway', sans-serif;
+    position: relative;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+  }
+  html, body {
+    overflow-x: hidden;
+  } 
+/* General style */
+p,li{
+    font-size: 18px;
+    font-weight: 300;
+    list-style: none;
+    color: #1D1F22;
+}
+.product-figure{
+    width: 386px;
+    height: 444px;
+    padding: 16px;
+}
+.product-image{
+    width:354px;
+    height:330px;
+    object-fit:cover;
+    margin-bottom: 21px;
+}
+/* Container style */
+.container{
+    width: 90%;
+    margin: 0 auto;
+  }
+.products-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: auto auto auto; */
+    align-items: center;
+    justify-content: start;
+    grid-column-gap: 28px;
+    grid-row-gap: 103px;
+}
+/* category name style */
+
+.category-name{
+margin-top: 80px;
+margin-bottom: 103px;
+font-size: 42px;
+font-weight: 400;
+}
+
+/* Price style */
+.price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.price p{
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+    padding-top: 5px;
+}
+/* Product Container */
+.product-container{
+    position: relative;
+   text-decoration: none;
+}
+.product-container figcaption{
+    color:#1D1F22;
+    font-weight: 300;
+    font-size: 18px;
+}
+.product-container:hover{
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+}
+.product-container:hover .card-overlay{
+    display: flex;
+}
+/* cart overlay */
+.card-overlay{
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+    align-items: center;
+    background-color: #5ECE7B;
+    border-radius: 50%;
+    position: absolute;
+    top: 71%;
+    right: 8%;
+    display: none;
+} 
+.card-overlay img{
+    width: 24px;
+    height: 21.5px;
+    margin: 0 auto;
+}
+
+/* Out of stock style */
+
+.out-of-stock::after{
+    display: block;
+    content: 'Out Of Stock';
+    font-size: 24px;
+    font-weight: 400;
+    color: #8D8F9A;
+    position:absolute;
+    top: 40%;
+    left: 30%;
+    opacity: 1;
+}
+.out-of-stock{
+    opacity: 0.7;
+}

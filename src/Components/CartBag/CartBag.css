@@ -1,0 +1,73 @@
+.cart-bag h1 {
+  margin-top: 80px;
+  margin-bottom: 59px;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+}
+
+.cart-bag ul .cart-item {
+  padding: 20px 0;
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+  margin: 0;
+}
+.cart-bag ul .item-details .product-name {
+  font-size: 30px;
+}
+.cart-bag ul .item-details .product-price {
+  margin: 26px 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+.cart-bag ul .item-details .item-options__option .user-option,
+.cart-bag ul .item-details .item-options__option .second-option {
+  width: 63px;
+  height: 45px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.cart-bag ul .item-details .item-options__option .user-option {
+  order: 1;
+  margin-left: 12px;
+  background: #1d1f22;
+  color: #ffffff;
+}
+.cart-bag ul .item-details .item-options__option .color-user-option,
+.cart-bag ul .item-details .item-options__option .color-second-option {
+  border: none;
+  box-shadow: 0px 4px 20px rgba(144, 144, 145, 0.19);
+  width: 63px;
+  height: 45px;
+}
+.cart-bag ul .item-details .item-options__option .color-user-option {
+  padding: 1px;
+  border: 2px solid #ffffff;
+  outline: 2px solid #1d1f22;
+  order: 1;
+  margin-left: 12px;
+}
+.cart-bag ul .item-details .item-options__option .second-option {
+  border: 1px solid #1d1f22;
+  background-color: #ffffff;
+  color: #1d1f22;
+}
+.cart-bag ul .item-gallery {
+  height: 185px;
+}
+.cart-bag ul .item-gallery .item-counter div {
+  width: 45px;
+  height: 45px;
+  font-size: 30px;
+}
+.cart-bag ul .item-gallery .item-counter p {
+  font-size: 24px;
+}
+.cart-bag ul .item-gallery .img-gallery .img-gallery__show,
+.cart-bag ul .item-gallery .img-gallery .img-gallery__show img {
+  width: 141px;
+  height: 185px;
+}
+.cart-bag ul .item-gallery .img-gallery .img-slider {
+  display: flex;
+}
