@@ -41,6 +41,7 @@ class ProductAttributes extends Component {
         if (optionColor !== userPickedColor) {
           attributesItem.classList.remove("selected-color", "selected-option");
         }
+        return attributesItem
       });
     } else {
       e.target.classList.add("selected", "selected-option");
@@ -51,6 +52,7 @@ class ProductAttributes extends Component {
         if (attributesItem.innerText !== optionName) {
           attributesItem.classList.remove("selected", "selected-option");
         }
+        return attributesItem
       });
     }
 

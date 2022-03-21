@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import addToCart from "../../actions/addToCart";
+import addToCart from "../../redux/actions/addToCart";
 
 class AddToCartButton extends Component {
   // adding user selected product to cart
@@ -15,7 +15,7 @@ class AddToCartButton extends Component {
       const {inStock, optionsSelected} = this.props
     return (
       <>
-        <a
+        <button
           className="addToCart"
           style={{
             backgroundColor: inStock ? "#5ECE7B" : "#A6A6A6",
@@ -27,7 +27,7 @@ class AddToCartButton extends Component {
           onClick={() => this.addToBag()}
         >
           {inStock ? "ADD TO CART" : "OUT OF STOCK"}
-        </a>
+        </button>
       </>
     );
   }

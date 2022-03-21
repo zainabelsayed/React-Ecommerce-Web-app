@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import cartIcon from "../../assets/Vector.png";
-import addToCart from "../../actions/addToCart";
+import addToCart from "../../redux/actions/addToCart";
 import { connect } from "react-redux";
 
 class AddToCart extends Component {

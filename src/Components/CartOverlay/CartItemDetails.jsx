@@ -19,6 +19,7 @@ export default class CartItemDetails extends Component {
               );
               userSelection.secondOption = secondOption[0].value;
             }
+            return selected
           });
           return userSelection;
         })

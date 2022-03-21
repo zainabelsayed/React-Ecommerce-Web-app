@@ -47,6 +47,7 @@
 .selected {
   background-color: #1d1f22;
   color: #ffffff;
+  cursor: pointer;
 }
 /* color attributes */
 .Color {
@@ -58,6 +59,7 @@
   padding: 1px;
   border: 2px solid #ffffff !important;
   outline: 2px solid #1d1f22;
+  cursor: pointer;
 }
 .attribute-name {
   font-weight: 700;
@@ -83,6 +85,7 @@
   width: 292px;
   height: 52px;
   margin-bottom: 40px;
+  border: none;
 }
 /* product description */
 .product-details .product-description {

@@ -71,3 +71,6 @@
 .cart-bag ul .item-gallery .img-gallery .img-slider {
   display: flex;
 }
+.cart-bag ul .item-gallery .img-gallery .img-slider figure{
+  cursor: pointer;
+}

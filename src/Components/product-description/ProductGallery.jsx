@@ -34,7 +34,7 @@ class ProductGallery extends Component {
         <div className="image-gallery__show">
           <figure>
             {product.gallery ? (
-              <img src={imageShow ? imageShow : product.gallery[0]} alt="" />
+              <img src={imageShow ? imageShow : product.gallery[0]} alt={product.name} />
             ) : null}
           </figure>
         </div>

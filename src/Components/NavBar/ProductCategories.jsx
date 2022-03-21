@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 class ProductCategories extends Component {
     // handling active category
@@ -10,6 +10,7 @@ class ProductCategories extends Component {
           if (link.innerText !== e.target.innerText) {
             link.classList.remove("active");
           }
+          return link
         });
       }
     
@@ -20,18 +21,16 @@ class ProductCategories extends Component {
             <ul>
             {categories.map((category) => (
               <li key={category.name}>
-                <Link
+                <NavLink
                   to={`/${category.name}`}
                   id={category.name}
-                  className={
-                    category.name === "all" ? "nav-link active" : "nav-link"
-                  }
+                  className="nav-link"
                   onClick={(e) => {
                     this.handleActive(e);
                   }}
                 >
                   {category.name.toUpperCase()}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>

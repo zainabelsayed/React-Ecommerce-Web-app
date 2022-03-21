@@ -233,6 +233,7 @@ nav ul li{
     justify-content: center;
     align-items: center;
     font-size: 22px;
+    cursor: pointer;
 }
 .item-counter p{
     font-weight: 500;

@@ -11,7 +11,7 @@ export default class CurrunciesListToggler extends Component {
           <div className="selected-curruncy">
             <p>{selectedCurrency}</p>{" "}
             <figure>
-              <img src={showModal?downArrow : upArrow} />
+              <img src={showModal?downArrow : upArrow} alt='list arrow' />
             </figure>
           </div>
         )}

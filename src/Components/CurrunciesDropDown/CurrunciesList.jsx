@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { changeCurruncy } from "../../actions/ChangeCurruncy";
+import { changeCurruncy } from "../../redux/actions/ChangeCurruncy";
 
 class CurrunciesList extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   // dispatch the changeCurruncy action from redux when user choose a curruncy
   changeCurruncy(e) {
     const { dispatch, showCurunciesList } = this.props;

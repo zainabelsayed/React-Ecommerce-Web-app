@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import increaseProductCount from "../../actions/increaseProductCount";
-import decreaseProductCount from "../../actions/decreaseProductCount";
-import removeProduct from "../../actions/removeProduct";
+import increaseProductCount from "../../redux/actions/increaseProductCount";
+import decreaseProductCount from "../../redux/actions/decreaseProductCount";
+import removeProduct from "../../redux/actions/removeProduct";
 
 class CartItemCounter extends Component {
-  constructor(props) {
-    super(props);
-  }
   // increase the product count in the cart
   increaseCount(id) {
     const { dispatch } = this.props;
