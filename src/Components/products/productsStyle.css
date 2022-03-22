@@ -43,7 +43,7 @@ p,li{
     flex-wrap: wrap;
     /* grid-template-columns: auto auto auto; */
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     grid-column-gap: 28px;
     grid-row-gap: 103px;
 }
