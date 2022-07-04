@@ -48,12 +48,8 @@ class ProductAttributes extends Component {
     // adding user selected options to product object
     const userChoices = this.state.product.selectedOptions;
     const attribute = this.props.product.attributes;
-    console.log(userChoices.length);
     if (userChoices.length === attribute.length) {
-      this.setState(
-        () => ({ optionsSelected: true }),
-        console.log(this.state.optionsSelected)
-      );
+      this.setState(() => ({ optionsSelected: true }));
     }
   }
 
