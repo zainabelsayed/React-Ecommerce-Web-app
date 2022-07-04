@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Swatches from "./Swatches";
 import { Link } from "react-router-dom";
 import AddToCart from "./AddToCart";
 import ProductPrice from "./ProductPrice";
@@ -25,10 +24,9 @@ class Product extends Component {
             alt={product.name}
           />
           <AddToCart product={product} />
-          <figcaption>{product.name}</figcaption>
+          <figcaption>{product.brand} {product.name}</figcaption>
           <div className="price">
             <ProductPrice prices={product.prices} />
-            <Swatches product={product} />
           </div>
         </figure>
       </Link>

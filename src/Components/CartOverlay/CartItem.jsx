@@ -12,7 +12,7 @@ class CartItem extends Component {
             <CartItemDetails item={item}/>
             <CartGalleryAndCounter
               imgSrc={item.gallery}
-              id={item.id}
+              id={item.uid}
               count={item.count}
             />
           </>

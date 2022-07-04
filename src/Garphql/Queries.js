@@ -26,6 +26,7 @@ export const getProducts = (id) => {
         }
         amount
       }
+      brand
     }
     }
   }
@@ -72,6 +73,7 @@ export const getProduct = (id) => {
         }
         amount
       }
+      brand
     }
     }
   `

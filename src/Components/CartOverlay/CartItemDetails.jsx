@@ -6,7 +6,8 @@ import ItemOption from "./ItemOption";
 export default class CartItemDetails extends Component {
   render() {
     const { item } = this.props;
-    // getting the option that user selected and also another available option
+  
+    //getting the option that user selected and also another available option
     const options = item
       ? item.attributes.map((attr) => {
           let userSelection = {};
@@ -14,10 +15,6 @@ export default class CartItemDetails extends Component {
             if (attr.name === Object.keys(selected)[0]) {
               userSelection.attrName = attr.name;
               userSelection.selectedOption = selected[`${attr.name}`];
-              const secondOption = attr.items.filter(
-                (elem) => elem.value !== selected[`${attr.name}`]
-              );
-              userSelection.secondOption = secondOption[0].value;
             }
             return selected
           });
@@ -27,7 +24,7 @@ export default class CartItemDetails extends Component {
 
     return (
       <div className="item-details">
-        <ProductTitle productName={item.name} />
+        <ProductTitle productName={item.name} productBrand={item.brand} />
         <div className="item-price">
           <ProductPrice prices={item.prices} />
         </div>

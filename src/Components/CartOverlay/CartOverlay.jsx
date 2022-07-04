@@ -4,22 +4,15 @@ import CartIcon from "./CartIcon";
 import CartItems from "./CartItems";
 
 class CartOverlay extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showBag: false,
-    };
-  }
   // show the cart overly
   showCartOverlay() {
-    if (!this.state.showBag) {
+    const {showBag,prevShowBag} = this.props
+    if (!prevShowBag) {
       document.addEventListener("click", this.handleOutsideClick);
     } else {
       document.removeEventListener("click", this.handleOutsideClick);
     }
-    this.setState((prevState) => ({
-      showBag: !prevState.showBag,
-    }));
+    showBag(!prevShowBag)
   }
   // hide the cart overly when user click outside the cart overly
   handleOutsideClick = (e) => {
@@ -27,9 +20,14 @@ class CartOverlay extends Component {
       this.showCartOverlay();
     }
   };
+  //hide cart overlay when redirect
+  closeCartOverlay() {
+    const {showBag} = this.props
+    showBag(true)
+    this.showCartOverlay();
+  }
   render() {
-    const { cart } = this.props;
-    const showBag = this.state.showBag;
+    const { cart,prevShowBag } = this.props;
     return (
       <div
         ref={(cartNode) => {
@@ -39,7 +37,11 @@ class CartOverlay extends Component {
         <div onClick={() => this.showCartOverlay()}>
           <CartIcon cart={cart} />
         </div>
-        <CartItems cart={cart} showBag={showBag} />
+        <CartItems
+          cart={cart}
+          showBag={prevShowBag}
+          closeCartOverlay={this.closeCartOverlay.bind(this)}
+        />
       </div>
     );
   }

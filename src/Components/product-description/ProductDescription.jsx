@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Parser from 'html-react-parser';
 import { getProduct } from "../../Garphql/Queries";
 import ProductAttributes from "./ProductAttributes";
 import ProductGallery from "./ProductGallery";
@@ -28,22 +29,25 @@ class ProductDescription extends Component {
   componentDidMount() {
     this.fetchData(this.state.id);
   }
-
+  
   render() {
     const product = this.state.product;
-
+    const {showBag} = this.props
     return (
       <>
+        <div className={showBag?"darkBG":""}></div>
         <div className="container product-details-wrapper">
           <ProductGallery product={product} />
           <div className="product-details">
-            <ProductTitle productName={product.name} />
+            <ProductTitle
+              productName={product.name}
+              productBrand={product.brand}
+            />
             <ProductAttributes product={product} client={this.props.client} />
             {product.description ? (
               <div
                 className="product-description"
-                dangerouslySetInnerHTML={{ __html: product.description }}
-              ></div>
+              >{Parser(product.description)}</div>
             ) : null}
           </div>
         </div>

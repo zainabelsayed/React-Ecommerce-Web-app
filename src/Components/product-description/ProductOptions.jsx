@@ -9,6 +9,7 @@ export default class ProductOptions extends Component {
      {attributes
           ? attributes.map((attribute) => (
               <ProductOption
+                key={attribute.id}
                 attribute={attribute}
                 handleActive={handleActive}
               />

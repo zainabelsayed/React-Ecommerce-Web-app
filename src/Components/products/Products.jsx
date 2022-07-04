@@ -39,11 +39,14 @@ class Products extends Component {
 
   render() {
     const products = this.state.products;
+    const {showBag} = this.props
     // category name in camel case
     const categoryName =
       this.state.id.charAt(0).toUpperCase() + this.state.id.slice(1);
 
     return (
+      <>
+      <div className={showBag?"darkBG":""}></div>
       <div className="container">
         <h1 className="category-name">{categoryName}</h1>
         <div className="products-wrapper">
@@ -52,6 +55,7 @@ class Products extends Component {
           ))}
         </div>
       </div>
+      </>
     );
   }
 }

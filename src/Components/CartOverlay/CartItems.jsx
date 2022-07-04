@@ -6,7 +6,7 @@ import CartButton from "./CartButton";
 
 export default class CartItems extends Component {
   render() {
-    const { cart, showBag } = this.props;
+    const { cart, showBag, closeCartOverlay } = this.props;
     return (
       <div
         className="cart-overlay"
@@ -22,8 +22,8 @@ export default class CartItems extends Component {
         ) : null}
         <TotalPrice />
         <div className="dflex">
-          <CartButton text="VIEW BAG" />
-          <CartButton text="CHECKOUT" />
+          <CartButton text="VIEW BAG" closeCartOverlay={closeCartOverlay} />
+          <CartButton text="CHECKOUT" closeCartOverlay={closeCartOverlay} />
         </div>
       </div>
     );

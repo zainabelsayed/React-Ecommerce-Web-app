@@ -23,11 +23,12 @@ const errorLink = onError(({ graphqlErrors, networkErrors }) => {
   if (graphqlErrors) {
     graphqlErrors.map(({ message, location, path }) => {
       alert(`Graphql error ${message}`);
+      return graphqlErrors;
     });
   }
 });
 
-const link = from([errorLink, new HttpLink({ uri: "/" })]);
+const link = from([errorLink, new HttpLink({ uri: "http://localhost:4000/" })]);
 const cache = new InMemoryCache();
 // configuring Apollo client with GraphQl
 const client = new ApolloClient({
@@ -36,15 +37,25 @@ const client = new ApolloClient({
 });
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showBag: false,
+    };
+  }
   render() {
     return (
       <ApolloProvider client={client}>
         <Router>
           <>
-            <NavBar client={client} />
+            <NavBar
+              client={client}
+              prevShowBag={this.state.showBag}
+              showBag={(toggle) => this.setState({ showBag: toggle })}
+            />
             <Switch>
               <Route exact path="/cart">
-                <CartBag />
+                <CartBag showBag={this.state.showBag} />
               </Route>
               <Route exact path="/">
                 {<Redirect to="/all" />}
@@ -52,12 +63,22 @@ export default class App extends Component {
               <Route
                 exact
                 path="/:id"
-                render={(props) => <Products client={client} {...props} />}
+                render={(props) => (
+                  <Products
+                    showBag={this.state.showBag}
+                    client={client}
+                    {...props}
+                  />
+                )}
               />
               <Route
                 path="/:id/:productId"
                 render={(props) => (
-                  <ProductDescription client={client} {...props} />
+                  <ProductDescription
+                    showBag={this.state.showBag}
+                    client={client}
+                    {...props}
+                  />
                 )}
               />
             </Switch>

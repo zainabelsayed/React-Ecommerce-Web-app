@@ -22,6 +22,9 @@ nav ul li{
     font-size: 16px;
     font-weight: 600;
 }
+.nav-container .logo-link{
+    border-bottom: none;
+}
 .nav-link{
     text-decoration: none;
     color: #1D1F22;
@@ -131,8 +134,28 @@ nav ul li{
     padding: 16px;
     box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
     background-color: #ffffff;
-    z-index: 1;
+    z-index: 2;
+    overflow-y: auto;
+    max-height: 500px;
 }
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 .cart-overlay .cart-title{
     font-size: 16px;
     font-weight: 500;
@@ -170,10 +193,14 @@ nav ul li{
 .item-options__option{
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+}
+.item-options__option .attribute-name{
+    font-size: 14px;
 }
 .item-options__option .user-option,.second-option, .color-user-option, .color-second-option{
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 26px;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -181,6 +208,7 @@ nav ul li{
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
+    margin-left: 5px;
 }
 .item-options__option .user-option, .item-options__option .color-user-option{
     border:1px solid #1D1F22;

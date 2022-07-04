@@ -5,8 +5,10 @@ import { connect } from 'react-redux'
 
 class CartBag extends Component {
   render() {
-    const { cart } = this.props
+    const { cart,showBag } = this.props
     return (
+      <>
+      <div className={showBag?"darkBG":""}></div>
       <div className='container cart-bag'>
         <h1>CART</h1>
         {cart ? (
@@ -17,6 +19,7 @@ class CartBag extends Component {
           </ul>
         ) : null}
       </div>
+      </>
     )
   }
 }

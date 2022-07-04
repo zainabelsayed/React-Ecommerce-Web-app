@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import cartIcon from "../../assets/Vector.png";
 import addToCart from "../../redux/actions/addToCart";
 import { connect } from "react-redux";
@@ -7,7 +8,7 @@ class AddToCart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      productInCart: { ...this.props.product, count: 1, selectedOptions: [] },
+      productInCart: { ...this.props.product,uid:uuidv4(), count: 1, selectedOptions: [] },
     };
   }
   addToCart(e, product) {
@@ -23,6 +24,7 @@ class AddToCart extends Component {
       (prevState) => ({
         productInCart: {
           ...product,
+          uid:uuidv4(),
           count: 1,
           totalPrice: 0,
           selectedOptions: [...selectedOptions],

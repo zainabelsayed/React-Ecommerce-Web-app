@@ -2,13 +2,13 @@ import React, { Component } from "react";
 
 export default class ProductTitle extends Component {
   render() {
-    const { productName } = this.props;
-    const [title, ...subTitle] = productName ? productName.split(" ") : [];
+    const { productName, productBrand } = this.props;
+
     return (
       <div className="product-name">
         <div>
-          <h4>{title}</h4>
-          {subTitle.join(" ")}
+          <h4>{productBrand}</h4>
+          {productName}
         </div>
       </div>
     );

@@ -2,18 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
 class ProductCategories extends Component {
-    // handling active category
-    handleActive(e) {
-        e.target.classList.add("active");
-        const navLinks = Array.from(document.getElementsByClassName("nav-link"));
-        navLinks.map((link) => {
-          if (link.innerText !== e.target.innerText) {
-            link.classList.remove("active");
-          }
-          return link
-        });
-      }
-    
+   
     render() {
         const {categories} = this.props
         return (
@@ -25,9 +14,6 @@ class ProductCategories extends Component {
                   to={`/${category.name}`}
                   id={category.name}
                   className="nav-link"
-                  onClick={(e) => {
-                    this.handleActive(e);
-                  }}
                 >
                   {category.name.toUpperCase()}
                 </NavLink>

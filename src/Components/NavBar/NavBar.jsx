@@ -31,22 +31,20 @@ class NavBar extends Component {
   render() {
     const currncies = this.state.curuncies;
     const categories = this.state.categories;
-    const logoStyle={
-      borderBottom: 'none'
-    }
+    const {showBag,prevShowBag} = this.props
     return (
       <div className="container nav-container">
         <nav>
           <ProductCategories categories={categories}/>
         </nav>
-        <NavLink to={'/'} style={logoStyle}>
+        <NavLink className="logo-link" to={'/'} >
         <figure>
           <img className="logo-img" src={logo} alt="logo" />
         </figure>
         </NavLink>
         <div className="cart-and-currency">
           <CurruncyDropDown currncies={currncies} />
-          <CartOverlay/>
+          <CartOverlay showBag={showBag} prevShowBag={prevShowBag}/>
         </div>
       </div>
     );

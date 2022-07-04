@@ -17,7 +17,7 @@ class TotalPrice extends Component {
     return (
       <div className="items-total-price">
         <p>Total</p>
-        <p>{`${selectedCurruncy}${total.toFixed(0)}`}</p>
+        <p>{`${selectedCurruncy}${total.toFixed(2)}`}</p>
       </div>
     );
   }

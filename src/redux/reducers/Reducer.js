@@ -26,7 +26,7 @@ export default function curruncyReducer(state = intialState, action) {
         ...state,
         cart: [
           ...state.cart.map((product) => {
-            if (product.id === action.payload) {
+            if (product.uid === action.payload) {
               product.count++;
             }
             return product;
@@ -38,9 +38,10 @@ export default function curruncyReducer(state = intialState, action) {
         ...state,
         cart: [
           ...state.cart.map((product) => {
-            if (product.id === action.payload && product.count > 1) {
+            if (product.uid === action.payload && product.count > 1) {
               product.count--;
             }
+            console.log(state.cart)
             return product;
           }),
         ],
@@ -48,7 +49,7 @@ export default function curruncyReducer(state = intialState, action) {
     case REMOVE_PRODUCT:
       return{
         ...state,
-        cart: [...state.cart.filter(item=> item.id !== action.payload )]
+        cart: [...state.cart.filter(item=> item.uid !== action.payload )]
       }
     default:
       return state;

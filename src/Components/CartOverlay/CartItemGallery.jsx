@@ -42,7 +42,9 @@ export default class CartItemGallery extends Component {
     const { imgSrc } = this.props;
     return (
       <div className="img-gallery">
-        <ImgSlider imgSlider={this.imgSlider.bind(this)}/>
+        {imgSrc.length > 1 &&(
+          <ImgSlider imgSlider={this.imgSlider.bind(this)}/>
+        )}
         <figure className="img-gallery__show">
           <img ref={this.currentImg} src={imgSrc[imgCount]} alt="" />
         </figure>
