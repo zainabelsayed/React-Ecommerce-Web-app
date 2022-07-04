@@ -1,4 +1,4 @@
-# What it is?
+# What is it?
 
 it's an e-commerce app developed with React(class component), Redux , GraphQl and Apollo client.
 
